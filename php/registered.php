@@ -4,13 +4,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection settings
-$servername = "localhost";
-$username = "root"; // Default XAMPP username
-$password = ""; // Default XAMPP password (leave empty)
-$dbname = "user_info"; // Name of your database
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "user_info";
 
 // Connect to MySQL
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, 3306);
 
 // Check connection
 if ($conn->connect_error) {
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$firstname', '$lastname', '$username', '$contactnumber', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Registration successful!'); window.location.href = '../html/index.html';</script>";
+        echo "<script>alert('Registration successful!'); window.location.href = '../index.html';</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

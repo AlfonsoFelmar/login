@@ -4,13 +4,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection settings
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbname = "user_info";
 
 // Connect to MySQL
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, 3306);
 
 // Check connection
 if ($conn->connect_error) {
@@ -111,15 +111,15 @@ $result = $conn->query($sql);
         <form class="update-form" method="post" action="userlist.php">
             <input type="hidden" name="id" id="userId">
             <label for="userFirstname">First Name:</label>
-            <input type="text" name="firstname" id="userFirstname" placeholder="First Name">
+            <input type="text" name="firstname" id="userFirstname" placeholder="First Name" required>
             <label for="userLastname">Last Name:</label>
-            <input type="text" name="lastname" id="userLastname" placeholder="Last Name">
+            <input type="text" name="lastname" id="userLastname" placeholder="Last Name" required>
             <label for="userUsername">Username:</label>
-            <input type="text" name="username" id="userUsername" placeholder="Username">
+            <input type="text" name="username" id="userUsername" placeholder="Username" required>
             <label for="userContact">Contact Number:</label>
-            <input type="text" name="contactnumber" id="userContact" placeholder="Contact Number">
+            <input type="tel" name="contactnumber" id="userContact" placeholder="Contact Number" pattern="[0-9]{10}" required>
             <label for="userEmail">Email:</label>
-            <input type="email" name="email" id="userEmail" placeholder="Email">
+            <input type="email" name="email" id="userEmail" placeholder="Email" required>
             <input type="submit" name="update_user" value="Update User">
         </form>
     </div>

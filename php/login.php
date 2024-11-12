@@ -5,13 +5,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection settings
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbname = "user_info";
 
 // Connect to MySQL
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, 3306);
 
 // Check connection
 if ($conn->connect_error) {
@@ -29,12 +29,12 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['password'])) {
-        echo "<script>alert('Login successful!'); window.location.href = '../html/logging.html';</script>";
+        echo "<script>alert('Login successful!'); window.location.href = '../logging.html';</script>";
     } else {
-        echo "<script>alert('Invalid password.'); window.location.href = 'index.html';</script>";
+        echo "<script>alert('Invalid password.'); window.location.href = '../index.html';</script>";
     }
 } else {
-    echo "<script>alert('User not found.'); window.location.href = 'index.html';</script>";
+    echo "<script>alert('User not found.'); window.location.href = '../index.html';</script>";
 }
 
 // Close connection
