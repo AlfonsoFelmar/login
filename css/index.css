@@ -1,0 +1,65 @@
+.content {
+    width: 100%;
+    max-width: 350px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+label {
+    color: #333333;
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #45a049;
+}
+
+.register-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+}
+
+.register-btn:hover {
+    background-color: #e0e0e0;
+}
